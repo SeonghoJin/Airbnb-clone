@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+header{
+    display: flex;
+    background:burlywood;
+    width:60%;
+    height:80px;
+    padding:0px 40px 0px 40px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.util{
+    height:100%;
+    display: flex;
+    align-items: center;
+}
+
+.content{
+    display:flex;
+}
+
+.nav_image{
+    height:60%;
+}
+
+.option_button{
+    display: flex;
+    height:80%;
+    align-items: center;
+}
+
+.language_icon{
+    height:40%;
+}
