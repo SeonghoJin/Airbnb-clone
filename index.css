@@ -38,3 +38,22 @@ header{
 .language_icon{
     height:40%;
 }
+
+
+.bigbox{
+    width:60%;
+    background-color: white;
+    border : 1px solid aqua;
+    display:flex;
+    justify-content: space-around;
+    border-radius: 300px;
+    overflow:hidden;
+}
+
+.bigbox .under_smbox{
+    color: #777777;
+}
+
+.smallbox:hover{
+    background-color:#DDDDDD;
+}
