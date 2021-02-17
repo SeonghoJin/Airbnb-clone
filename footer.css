@@ -1,0 +1,51 @@
+.under{
+    display: flex;
+    border-bottom: 1px solid #777777;
+}
+
+.under_items{
+    margin: 10px 30px 10px 10px;
+}
+
+.under_item_main{
+    font-weight: bold;
+}
+
+.under_item{
+    margin:1em 0px 1em 0px;
+}
+
+footer{
+    display: flex;
+    flex-direction:column-reverse;
+    align-items: center;
+}
+
+.footer_left{
+    text-align: center;
+}
+
+.footer_right{
+    display: flex;
+}
+
+.footer_util{
+    display:flex;
+    margin-right: 20px;
+}
+
+.footer_shortcut{
+    display:flex;
+}
+
+.footer_util > div {
+    margin : 5px;
+}
+
+.footer_shortcut > div {
+    margin : 5px;
+}
+
+footer, .under{
+    background-color: #F7F7F7;
+}
