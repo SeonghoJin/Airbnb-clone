@@ -123,3 +123,23 @@ header{
     width : 100%;
     border-radius: 30px;
 }
+
+
+.online_experience {
+    height : 70%;
+    background-color: white;
+}
+.online_head{
+    border : 5px solid blue;
+}
+.experiences{
+    display : flex;
+    height : 50%;
+    border :10px solid red;
+}
+.experience_box{
+    height : 50px;
+}
+.experience_box > img{
+    height : 100px;
+}
