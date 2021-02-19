@@ -1,6 +1,6 @@
 body{
     display: flex;
-    height:100vh;
+    height:90%;
     flex-direction: column;
     align-items:center;
 }
@@ -42,7 +42,7 @@ header{
 
 
 .bigbox{
-    height : ;
+    height : 10%;
     width:60%;
     background-color: white;
     border : 1px solid aqua;
@@ -62,7 +62,7 @@ header{
 
 
 .location{
-    height : 60%;
+    height : 30%;
     width: 100%;
     border : 1px solid blue;
 }
@@ -84,12 +84,12 @@ header{
     display : flex;
 }
 .city_box{
-    height : 100%;
     border : 1px solid red;
     display : flex;
 }
 .city_box > img{
-    height : 100%;
+    width : 40%;
+    height : auto;
     border-radius : 30px;
 }
 .city_box_text {
@@ -126,7 +126,8 @@ header{
 
 
 .online_experience {
-    height : 70%;
+    width : 100%;
+    height : 20%;
     background-color: white;
 }
 .online_head{
