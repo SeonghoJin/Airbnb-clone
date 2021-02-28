@@ -1,153 +1,158 @@
-body{
+body {
     display: flex;
-    height:90%;
+    height: 90%;
     flex-direction: column;
-    align-items:center;
-    margin : 0px;
+    align-items: center;
+    margin: 0px;
 }
 
-.main_layout{
-    height : 25%;
-    width : 100%;
-    border : 1px solid red;
+.main_layout {
+    height: 25%;
+    width: 100%;
+    border: 1px solid red;
 }
-header{
+
+header {
     display: flex;
-    background:burlywood;
-    width:100%;
-    height:80px;
-    padding:0px 40px 0px 40px;
+    background: burlywood;
+    width: 100%;
+    height: 80px;
+    padding: 0px 40px 0px 40px;
     justify-content: space-between;
     align-items: center;
-    
 }
 
-.nav_image{
-    height:100%;
+.nav_image {
+    height: 100%;
 }
 
-.content{
-    display:flex;
+.content {
+    display: flex;
 }
 
-.util{
-    height:100%;
+.util {
+    height: 100%;
     display: flex;
     align-items: center;
 }
 
-
-.option_button{
+.option_button {
     display: flex;
-    height:80%;
+    height: 80%;
     align-items: center;
 }
 
-.language_icon{
-    height:40%;
+.language_icon {
+    height: 40%;
 }
 
-
-.bigbox{
-    height : 10%;
-    width:100%;
+.bigbox {
+    height: 10%;
+    width: 100%;
     background-color: white;
-    border : 1px solid aqua;
-    display:flex;
+    border: 1px solid aqua;
+    display: flex;
     justify-content: space-around;
     border-radius: 300px;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.bigbox .under_smbox{
+.bigbox .under_smbox {
     color: #777777;
 }
 
-.smallbox:hover{
-    background-color:#DDDDDD;
+.smallbox:hover {
+    background-color: #DDDDDD;
 }
 
-
-.location{
-    height : 20%;
+.location {
+    height: 20%;
     width: 100%;
-    border : 1px solid blue;
+    border: 1px solid blue;
 }
-.city{
-    height : 25%;
+
+.city {
+    height: 25%;
 }
-.upper_city{
+
+.upper_city {
     height: 50%;
-    padding : 0px 40px 0px 40px;
-    justify-content : space-around;
-    border : 1px solid black;
-    display : flex;
-}
-.lower_city{
-    height: 50%;
-    padding : 0px 40px 0px 40px;
-    justify-content : space-around;
-    border : 1px solid black;
-    display : flex;
-}
-.city_box{
-    border : 1px solid red;
-    display : flex;
-}
-.city_box > img{
-    width : 40%;
-    height : auto;
-    border-radius : 30px;
-}
-.city_box_text {
-    padding : 0px 8px 0px 8px;
-    overflow : hidden;
-}
-.city_name{
-    font-weight: bold;
-    margin : 10px 0px 0px 0px;
-}
-.house_kind{
-    height : 75%;
-    font-size :xx-large;
-    font-weight: bold;
-}
-.houses{
+    padding: 0px 40px 0px 40px;
     justify-content: space-around;
-    height : 90%;
-    display : flex;
+    border: 1px solid black;
+    display: flex;
 }
-.house_box{
-    height : 90%;
-    font-weight: bold;
-    font-size: large;
-    text-align: start;
-    padding : 10px;
-    
+
+.lower_city {
+    height: 50%;
+    padding: 0px 40px 0px 40px;
+    justify-content: space-around;
+    border: 1px solid black;
+    display: flex;
 }
-.house_box > img {
-    height :auto;
-    width : 100%;
+
+.city_box {
+    border: 1px solid red;
+    display: flex;
+}
+
+.city_box>img {
+    width: 40%;
+    height: auto;
     border-radius: 30px;
 }
 
+.city_box_text {
+    padding: 0px 8px 0px 8px;
+    overflow: hidden;
+}
+
+.city_name {
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+}
+
+.house_kind {
+    height: 75%;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.houses {
+    justify-content: space-around;
+    height: 90%;
+    display: flex;
+}
+
+.house_box {
+    height: 90%;
+    font-weight: bold;
+    font-size: large;
+    text-align: start;
+    padding: 10px;
+}
+
+.house_box>img {
+    height: auto;
+    width: 100%;
+    border-radius: 30px;
+}
 
 .online_experience {
-    width : 100%;
-    height : 20%;
+    width: 100%;
+    height: 20%;
     background-color: white;
 }
-.online_head{
-    border : 5px solid blue;
+
+.online_head {
+    border: 5px solid blue;
 }
-.experiences{
-    display : flex;
-    height : 50%;
-    border :10px solid red;
+
+.experiences {
+    display: flex;
+    border: 10px solid red;
 }
-.experience_box{
-    height : 50px;
-}
-.experience_box > img{
-    height : 100px;
+
+.experience_box>img {
+    height: 100px;
 }
