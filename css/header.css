@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 header {
     height: 80px;
     left: 0px;
@@ -15,6 +19,8 @@ header {
 }
 
 .main_nav_wrapper {
+    max-width: 1760px;
+    margin: auto;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -39,6 +45,44 @@ header {
 
 .main_tab:hover {
     color: rgb(150, 150, 150);
+}
+
+.sub_tabs_wrapper {
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+.sub_tab {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    color: #FFFFFF;
+}
+
+.sub_tab.third {
+    background-color: #FFFFFF;
+    border-radius: 21px;
+    height: 42px;
+    position: relative;
+    display: flex;
+    border: 1px solid #DDDDDD;
+    align-items: center;
+}
+
+.profile {
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+}
+
+.sub_tab img {
+    height: 80px;
 }
 
 .main_background_wrapper {
