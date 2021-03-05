@@ -35,7 +35,7 @@ header {
 
 .main_tabs_wrapper {
     display: flex;
-    margin-left: 100px;
+    margin-left: 90px;
 }
 
 .main_tab {
@@ -59,6 +59,7 @@ header {
 }
 
 .sub_tab {
+    margin-right: 8px;
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
