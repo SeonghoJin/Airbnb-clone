@@ -106,7 +106,7 @@ header {
     position: absolute;
     display: flex;
     width: 100%;
-    padding-bottom: min(56.26%, 90vh);
+    height: 100%;
     top: 0px;
 }
 
