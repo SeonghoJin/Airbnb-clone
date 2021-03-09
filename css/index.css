@@ -63,7 +63,7 @@ body {
     max-width: 1760px;
     margin : 64px auto;
     gap:16px;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .city_box {
