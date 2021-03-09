@@ -47,60 +47,53 @@ body {
     overflow: hidden;
 }
 
-.bigbox .under_smbox {
-    color: #777777;
-}
-
 .smallbox:hover {
     background-color: #DDDDDD;
 }
 
 .location {
-    height: 20%;
-    width: 100%;
-    border: 1px solid blue;
+
+    flex-direction: column;
 }
 
 .city {
     height: 25%;
-}
-
-.upper_city {
-    height: 50%;
-    padding: 0px 40px 0px 40px;
-    justify-content: space-around;
-    border: 1px solid black;
-    display: flex;
-}
-
-.lower_city {
-    height: 50%;
-    padding: 0px 40px 0px 40px;
-    justify-content: space-around;
-    border: 1px solid black;
-    display: flex;
+    display : grid;
+    padding : 0 80px;
+    max-width: 1760px;
+    margin : 64px auto;
+    gap:16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .city_box {
-    border: 1px solid red;
     display: flex;
+    flex:1 1 0px;
+    height:64px;
 }
 
 .city_box>img {
-    width: 40%;
-    height: auto;
-    border-radius: 30px;
+    margin-right:16px;
+    border-radius: 8px;
 }
 
 .city_box_text {
-    padding: 0px 8px 0px 8px;
     overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.city_box_text p{
+    padding-bottom: 2px;
+    margin:0px;
 }
 
 .city_name {
     font-weight: bold;
-    margin: 10px 0px 0px 0px;
 }
+
+
 
 .house_kind {
     height: 75%;
