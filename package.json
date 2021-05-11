@@ -1,23 +1,24 @@
 {
-  "name": "airbnb-clone",
-  "version": "1.0.0",
-  "description": "PIMM_Proeject,",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SeonghoJin/Airbnb-Clone.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/SeonghoJin/Airbnb-Clone/issues"
-  },
-  "homepage": "https://github.com/SeonghoJin/Airbnb-Clone#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nedb": "^1.8.0"
-  }
+    "name": "airbnb-clone",
+    "version": "1.0.0",
+    "description": "PIMM_Proeject,",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SeonghoJin/Airbnb-Clone.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/SeonghoJin/Airbnb-Clone/issues"
+    },
+    "homepage": "https://github.com/SeonghoJin/Airbnb-Clone#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "nedb": "^1.8.0"
+    }
 }
