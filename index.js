@@ -1,13 +1,11 @@
 import express from 'express';
-import path from 'path';
-import config from './src/config/index.js'
+import config from './src/config/index.js';
+import route from './src/routes/index.js';
+import middlewears from './src/middlewears/index.js';
 const app = express();
-const __dirname = path.resolve();
-app.use("/static", express.static(path.join(__dirname, '/src/static')));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, "/src/static/index.html"));
-});
+middlewears(app);
+app.use(route);
 
 app.listen(config.port, () => {
     console.log(`
