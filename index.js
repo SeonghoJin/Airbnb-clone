@@ -1,17 +1,18 @@
-const express = require('express');
+import express from 'express';
+import path from 'path';
+import config from './src/config/index.js'
 const app = express();
-const path = require("path");
-
+const __dirname = path.resolve();
 app.use("/static", express.static(path.join(__dirname, '/src/static')));
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, "/src/static/index.html"));
 });
 
-app.listen(3000, () => {
+app.listen(config.port, () => {
     console.log(`
       ################################################
-      🛡️  Server listening on port: ${3000} 🛡️
+      🛡️  Server listening on port: ${config.port} 🛡️
       ################################################
     `);
 }).on('error', err => {
