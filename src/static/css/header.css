@@ -88,7 +88,44 @@ header.scrolled {
     display: flex;
     border: 1px solid #DDDDDD;
     align-items: center;
-    transition: box-shadow 300ms ease-in-out
+    transition: box-shadow 300ms ease-in-out;
+    margin:0px;
+    cursor:pointer;
+}
+
+.options{
+    background-color: white;
+    width:230px;
+    border-radius: 12px;
+    position: absolute;
+    right:0px;
+    top:75px;
+}
+
+.options ul {
+    margin-top:10px;
+    margin-bottom: 10px;
+    position: relative;
+    list-style: none;
+    padding-left: 0px;
+}
+
+.options > ul > li {
+    font-size: 14px;
+    padding:12px;
+    cursor: pointer;
+}
+
+.options > ul > li:hover {
+    background-color: #E2E2E2; 
+}
+
+.options > ul:first-child > li:last-child {
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.options > ul:first-child > li:first-child{
+    font-weight: bold;
 }
 
 .sub_tab.third:hover{

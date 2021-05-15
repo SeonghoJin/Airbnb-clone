@@ -36,3 +36,17 @@ const removeScrolledClass = () => {
     logo_svg.classList.remove('scrolled');
     header.classList.remove('scrolled');
 }
+
+
+const third_tap_button = document.querySelector('.sub_tab.third');
+const options = document.querySelector('.options');
+
+const changeDisplay = () => {
+    console.log(options.style.display);
+    options.style.display = (options.style.display === "none" ? "block" : "none");
+    console.log(options.style.display);
+}
+
+third_tap_button.addEventListener('click', () => {
+    changeDisplay();
+})
