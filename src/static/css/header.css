@@ -41,7 +41,6 @@ header.scrolled {
     position: relative;
     width: 100%;
     align-items: center;
-    color: white;
 }
 
 .main_nav_wrapper.scrolled {
@@ -89,6 +88,11 @@ header.scrolled {
     display: flex;
     border: 1px solid #DDDDDD;
     align-items: center;
+    transition: box-shadow 300ms ease-in-out
+}
+
+.sub_tab.third:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 .profile {
@@ -151,7 +155,6 @@ header.scrolled {
 }
 
 .main_background_online_content span {
-    color: white;
     font-size: 60px;
     font-weight: 800;
     letter-spacing: normalem;
@@ -168,12 +171,13 @@ header.scrolled {
     border-style: solid;
     border-width: 1px;
     border-color: #222222;
+    color:white;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 15px;
     padding-right: 15px;
     display: inline-block;
-    background-color: white;
+    background-color: #222222;
     border: none;
 }
 
