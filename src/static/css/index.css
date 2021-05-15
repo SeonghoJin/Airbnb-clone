@@ -1,3 +1,11 @@
+.hidden {
+    display:none;
+}
+
+.flex {
+    display: flex;
+}
+
 body {
     display: flex;
     height: 90%;

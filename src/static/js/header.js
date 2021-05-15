@@ -4,6 +4,15 @@ const logo_svg = document.querySelector('.logo_wrapper svg');
 const header = document.querySelector('header');
 let scrolled = false;
 
+function disableScroll() {
+    document.body.style.overflow = 'hidden';
+    document.querySelector('html').scrollTop = window.scrollY;
+}
+
+function enableScroll() {
+    document.body.style.overflow = null;
+}
+
 document.addEventListener('scroll', () => {
     let check = false;
     if (document.scrollingElement.scrollTop < 0.1) {
@@ -42,11 +51,39 @@ const third_tap_button = document.querySelector('.sub_tab.third');
 const options = document.querySelector('.options');
 
 const changeDisplay = () => {
-    console.log(options.style.display);
     options.style.display = (options.style.display === "none" ? "block" : "none");
-    console.log(options.style.display);
 }
 
 third_tap_button.addEventListener('click', () => {
     changeDisplay();
 })
+
+const login_button = document.querySelector('.login');
+const login_modal = document.querySelector('.login_modal');
+const login_container = document.querySelector('.modal_container');
+const remove_modal = document.querySelector('.remove_modal');
+
+login_button.addEventListener('click', (e) => {
+    pop_up_login_modal();
+})
+
+login_container.addEventListener('click', (e) => {
+    remove_login_modal();
+})
+
+remove_modal.addEventListener('click', (e) => {
+    remove_login_modal();
+})
+
+const pop_up_login_modal = () => {
+    changeDisplay();
+    login_modal.classList.remove('hidden');
+    login_modal.classList.add('flex');
+    disableScroll();
+}
+
+const remove_login_modal = () => {
+    login_modal.classList.remove('flex');
+    login_modal.classList.add('hidden');
+    enableScroll();
+}
