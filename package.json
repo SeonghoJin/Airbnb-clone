@@ -21,6 +21,8 @@
     },
     "homepage": "https://github.com/SeonghoJin/Airbnb-Clone#readme",
     "dependencies": {
+        "@types/express": "^4.17.11",
+        "@types/express-session": "^1.17.3",
         "axios": "^0.21.1",
         "connect-nedb-session": "^0.0.3",
         "cors": "^2.8.5",
