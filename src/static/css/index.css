@@ -1,5 +1,13 @@
 .hidden {
-    display:none;
+    display: none;
+}
+
+.op1 {
+    opacity: 1;
+}
+
+.op0 {
+    opacity: 0;
 }
 
 .flex {

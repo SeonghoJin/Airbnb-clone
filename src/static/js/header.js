@@ -87,3 +87,18 @@ const remove_login_modal = () => {
     login_modal.classList.add('hidden');
     enableScroll();
 }
+
+
+const input_example = document.querySelector('.input_example');
+const input_email = document.querySelector('.input_email');
+
+input_email.addEventListener('input', (e) => {
+    if (input_email.value == "") {
+        input_example.classList.remove('animation');
+        input_email.classList.add('op0');
+
+    } else {
+        input_example.classList.add('animation');
+        input_email.classList.remove('op0');
+    }
+})
