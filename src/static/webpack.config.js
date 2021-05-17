@@ -1,6 +1,5 @@
 const path = require('path');
 const { LoaderTargetPlugin } = require('webpack');
-console.log(require("os").hostname());
 module.exports = {
     // enntry file
     entry: [

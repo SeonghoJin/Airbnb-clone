@@ -7,4 +7,4 @@ import "../css/index.css"
 import "../css/modal.css"
 import "../css/search.css"
 
-console.log(2);
+console.log(6);
