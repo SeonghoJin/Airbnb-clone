@@ -6,6 +6,8 @@
     "type": "module",
     "scripts": {
         "front-build": "cd ./src/static && npm run-script build",
+        "start:watch-front": "cd ./src/static && node dev-server",
+        "start:watch": "tsc --watch",
         "start": "nodemon index.js"
     },
     "repository": {
@@ -27,5 +29,8 @@
         "express-session": "^1.17.1",
         "nedb": "^1.8.0",
         "nodemon": "^2.0.7"
+    },
+    "devDependencies": {
+        "typescript": "^4.2.4"
     }
 }
