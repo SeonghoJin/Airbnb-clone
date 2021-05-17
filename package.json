@@ -5,7 +5,7 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "front-build": "cd ./src/static && npm run-script build",
         "start": "nodemon index.js"
     },
     "repository": {
@@ -24,12 +24,6 @@
         "express": "^4.17.1",
         "express-session": "^1.17.1",
         "nedb": "^1.8.0",
-        "nodemon": "^2.0.7",
-        "require": "^2.4.20"
-    },
-    "devDependencies": {
-        "babel-loader": "^8.2.2",
-        "webpack": "^5.37.0",
-        "webpack-cli": "^4.7.0"
+        "nodemon": "^2.0.7"
     }
 }
