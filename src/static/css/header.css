@@ -89,47 +89,47 @@ header.scrolled {
     border: 1px solid #DDDDDD;
     align-items: center;
     transition: box-shadow 300ms ease-in-out;
-    margin:0px;
-    cursor:pointer;
+    margin: 0px;
+    cursor: pointer;
 }
 
-.options{
+.options {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     background-color: white;
-    width:230px;
+    width: 230px;
     border-radius: 12px;
     position: absolute;
-    right:0px;
-    top:75px;
+    right: 0px;
+    top: 75px;
 }
 
 .options ul {
-    margin-top:10px;
+    margin-top: 10px;
     margin-bottom: 10px;
     position: relative;
     list-style: none;
     padding-left: 0px;
 }
 
-.options > ul > li {
+.options>ul>li {
     font-size: 14px;
-    padding:12px;
+    padding: 12px;
     cursor: pointer;
 }
 
-.options > ul > li:hover {
-    background-color: #E2E2E2; 
+.options>ul>li:hover {
+    background-color: #E2E2E2;
 }
 
-.options > ul:first-child > li:last-child {
+.options>ul:first-child>li:last-child {
     border-bottom: 1px solid #DDDDDD;
 }
 
-.options > ul:first-child > li:first-child{
+.options>ul:first-child>li:first-child {
     font-weight: bold;
 }
 
-.sub_tab.third:hover{
+.sub_tab.third:hover {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -209,7 +209,7 @@ header.scrolled {
     border-style: solid;
     border-width: 1px;
     border-color: #222222;
-    color:white;
+    color: white;
     padding-top: 7px;
     padding-bottom: 7px;
     padding-left: 15px;
