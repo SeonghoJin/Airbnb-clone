@@ -6,6 +6,7 @@ const options = {
     contentBase: './dist',
     hot: true,
     host: 'localhost',
+    port: 5000
 };
 
 webpackDevServer.addDevServerEntrypoints(config, options);
