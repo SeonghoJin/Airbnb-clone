@@ -82,7 +82,7 @@ const pop_up_login_modal = () => {
     disableScroll();
 }
 
-const remove_login_modal = () => {
+export const remove_login_modal = () => {
     login_modal.classList.remove('flex');
     login_modal.classList.add('hidden');
     enableScroll();

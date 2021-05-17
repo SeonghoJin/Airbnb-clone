@@ -6,5 +6,3 @@ import "../css/header.css"
 import "../css/index.css"
 import "../css/modal.css"
 import "../css/search.css"
-
-console.log(6);
