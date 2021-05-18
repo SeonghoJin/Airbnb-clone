@@ -191,12 +191,14 @@ body {
     margin: -10px;
     display: flex;
     justify-content: center;
+    color:white;
 }
 
 .bg-bl-content-item {
     height: 100%;
     width: 100%;
     margin: 10px;
+    color:white;
 }
 
 .bg-bl-content-item>img {
