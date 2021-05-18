@@ -92,13 +92,14 @@ export const remove_login_modal = () => {
 const input_example = document.querySelector('.input_example');
 const input_email = document.querySelector('.input_email');
 
-input_email.addEventListener('input', (e) => {
-    if (input_email.value == "") {
-        input_example.classList.remove('animation');
-        input_email.classList.add('op0');
+input_email.addEventListener('focus', (e) => {
+    input_email.classList.remove('op0');
+    input_example.classList.add('animation');
+})
 
-    } else {
-        input_example.classList.add('animation');
-        input_email.classList.remove('op0');
+input_email.addEventListener('blur', (e) => {
+    if (input_email.value == "") {
+        input_email.classList.add('op0');
+        input_example.classList.remove('animation');
     }
 })
