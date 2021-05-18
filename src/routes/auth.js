@@ -1,17 +1,27 @@
 import { Router } from 'express';
+import AuthService from '../service/AuthService.js';
+import { v4 } from 'uuid';
 var router = Router();
 export default (function (app) {
     app.use('/auth', router);
+    var authService = new AuthService();
     router.post('/login', function (req, res) {
         var email = req.body.email;
-        res.cookie("email", email, {
-            maxAge: 60 * 60 * 1000,
-            path: "/"
-        });
-        res.sendStatus(200);
-    });
-    router.get('/login', function (req, res) {
-        console.log(req.sessionID);
-        res.redirect('/');
+        if (authService.vaildEmail(email) === false) {
+            return res
+                .status(200)
+                .json({ "errorCode": "vaildEmail" })
+                .send();
+        }
+        var sessionID = v4();
+        res
+            .status(200)
+            .cookie("sessionID", sessionID, {
+            maxAge: 60 * 60 * 24
+        })
+            .json({
+            "sessionID": sessionID
+        })
+            .send();
     });
 });

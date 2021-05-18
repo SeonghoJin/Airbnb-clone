@@ -46,7 +46,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService.prototype.vaildEmail = function (email) {
         var spEmail = email.split('@');
-        return spEmail.length == 2;
+        return spEmail.length == 2 && spEmail[1] != '';
     };
     return AuthService;
 }());

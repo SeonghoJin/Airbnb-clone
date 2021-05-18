@@ -7,8 +7,8 @@ export default class AuthService{
 
     }
 
-    private vaildEmail(email : String) : boolean{
+    public vaildEmail(email : String) : boolean{
         const spEmail : string[] = email.split('@');
-        return spEmail.length == 2;
+        return spEmail.length == 2 && spEmail[1] != '';
     }
 }
