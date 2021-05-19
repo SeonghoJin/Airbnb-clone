@@ -14,7 +14,20 @@ export default class Header extends Component {
                 <span class="main_tab">체험</span>
                 <span class="main_tab">온라인 체험</span>
             </div>
-            <div class="sub_tabs_wrapper">
+            <SubTabThird class="sub_tabs_wrapper">
+            </SubTabThird>
+        </div>
+        `
+    }
+
+    mounted() {
+        this.attach('SubTabThird', SubTabThird);
+    }
+}
+
+class SubTabThird extends Component {
+    template() {
+        return `
                 <div class="sub_tab first">
                     호스트 되기
                 </div>
@@ -27,12 +40,10 @@ export default class Header extends Component {
                 </button>
                 <Options class="options hidden">
                 </Options>
-            </div>
-        </div>
         `
     }
 
     mounted() {
-        new Options(this.target.querySelector('options'));
+        this.attach("Options", Options);
     }
 }
