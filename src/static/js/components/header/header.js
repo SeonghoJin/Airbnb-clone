@@ -1,4 +1,5 @@
 import Component from "../../core/Component";
+import Options from "./Options";
 
 export default class Header extends Component {
     template() {
@@ -24,29 +25,14 @@ export default class Header extends Component {
                     <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 3; color:#222222; overflow: visible;"><g fill="none" fill-rule="nonzero"><path d="m2 16h28"></path><path d="m2 24h28"></path><path d="m2 8h28"></path></g></svg>
                     <svg class="profile" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; color:black; height:30px; width: 30px; fill: currentcolor;"><path d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"></path></svg>
                 </button>
-                <div class="options" style="display:none">
-                    <ul>
-                        <li class="login">
-                            로그인
-                        </li>
-                        <li>
-                            회원 가입
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            숙소 호스트 되기
-                        </li>
-                        <li>
-                            체험 호스팅하기
-                        </li>
-                        <li>
-                            도움말
-                        </li>
-                    </ul>
-                </div>
+                <Options class="options hidden">
+                </Options>
             </div>
         </div>
         `
+    }
+
+    mounted() {
+        new Options(this.target.querySelector('options'));
     }
 }

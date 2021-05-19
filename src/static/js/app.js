@@ -35,15 +35,15 @@ export default class App extends Component {
     }
 
     mounted() {
-        new Header(document.querySelector('header'));
-        new City(document.querySelector('city'));
-        new Search(document.querySelector('search'));
-        new MainBackground(document.querySelector('main-background'));
-        new House(document.querySelector('house'));
-        new Experience(document.querySelector('experience'));
-        new ContentThree(document.querySelector('contentThree'));
-        new Footer(document.querySelector('footer'));
-        new LoginModal(document.querySelector('LoginModal'));
+        this.attach('header', Header);
+        this.attach('city', City);
+        this.attach('search', Search);
+        this.attach('main-background', MainBackground);
+        this.attach('house', House);
+        this.attach('experience', Experience);
+        this.attach('contentThree', ContentThree);
+        this.attach('footer', Footer);
+        this.attach('LoginModal', LoginModal);
     }
 
 }

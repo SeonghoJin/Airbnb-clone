@@ -23,6 +23,10 @@ export default class Component {
         this.render();
     }
 
+    attach(selector, elem, props) {
+        new elem(this.target.querySelector(selector), props);
+    }
+
     addEvent(eventType, selector, callback) {
         const children = this.target.querySelectorAll(selector);
 
