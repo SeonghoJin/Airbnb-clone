@@ -27,4 +27,11 @@ export default class Options extends Component {
         `
     }
 
+    setEvent() {
+        const {
+            onLogin,
+        } = this.props;
+        this.addEvent('click', '.login', onLogin);
+    }
+
 }

@@ -1,6 +1,16 @@
+import {
+    isJSDocThisTag
+} from "typescript";
 import Component from "../../core/Component";
 
 export default class LoginModal extends Component {
+
+    setup() {
+        this.state = {
+            onFocusEmail: false
+        }
+    }
+
     template() {
         return `
         <div class="modal_container">
@@ -21,7 +31,7 @@ export default class LoginModal extends Component {
                         <div class="input_example">
                             이메일
                         </div>
-                        <input class="input_email op0" placeholder="이메일">
+                        <input class="input_email" placeholder="이메일">
                     </label>
                 </div>
                 <button class="signup_and_login">
@@ -30,5 +40,14 @@ export default class LoginModal extends Component {
             </div>
         </div>        
         `
+    }
+
+    setEvent() {
+        const {
+            toggleEnableLoginModal
+        } = this.props;
+
+        this.addEvent('click', '.remove_modal', toggleEnableLoginModal);
+        this.addEvent('click', '.modal_container', toggleEnableLoginModal);
     }
 }

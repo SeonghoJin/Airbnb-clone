@@ -11,11 +11,22 @@ import LoginModal from "./components/login-modal/LoginModal"
 
 export default class App extends Component {
 
+    setup() {
+        this.state = {
+            scrolled: false,
+            enableLoginModal: false
+        }
+
+    }
+
     template() {
+        const {
+            enableLoginModal
+        } = this.state;
         return `
-    <LoginModal class="login_modal hidden">
+    <LoginModal class="login_modal ${enableLoginModal ? "flex" : "hidden"}">
     </LoginModal>
-    <header>
+    <header class="${this.state.scrolled ? "scrolled" : ""}">
     </header>
     <search class="search_wrapper">
     </search>
@@ -35,7 +46,13 @@ export default class App extends Component {
     }
 
     mounted() {
-        this.attach('header', Header);
+        const {
+            scrolled
+        } = this.state;
+        this.attach('header', Header, {
+            scrolled: scrolled,
+            toggleEnableLoginModal: this.toggleEnableLoginModal.bind(this)
+        });
         this.attach('city', City);
         this.attach('search', Search);
         this.attach('main-background', MainBackground);
@@ -43,7 +60,59 @@ export default class App extends Component {
         this.attach('experience', Experience);
         this.attach('contentThree', ContentThree);
         this.attach('footer', Footer);
-        this.attach('LoginModal', LoginModal);
+        this.attach('LoginModal', LoginModal, {
+            toggleEnableLoginModal: this.toggleEnableLoginModal.bind(this)
+        });
     }
 
+    setEvent() {
+        document.addEventListener('scroll', (e) => {
+            const scrolled = this.checkScrolled();
+            if (scrolled === null) return;
+            this.setState({
+                scrolled: scrolled
+            })
+        })
+    }
+
+    toggleEnableLoginModal() {
+        this.setState({
+            enableLoginModal: !this.state.enableLoginModal
+        })
+
+        if (this.state.enableLoginModal) {
+            this.disableScroll();
+        } else {
+            this.enableScroll();
+        }
+    }
+
+    checkScrolled() {
+        let check = false;
+        if (document.scrollingElement.scrollTop < 0.1) {
+            check = !(this.state.scrolled === false)
+            this.state.scrolled = false;
+        } else {
+            check = !(this.state.scrolled === true)
+            this.state.scrolled = true;
+        }
+
+        if (check) {
+            if (this.state.scrolled === true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        return null;
+    }
+
+    disableScroll() {
+        document.body.style.overflow = 'hidden';
+        document.querySelector('html').scrollTop = window.scrollY;
+    }
+
+    enableScroll() {
+        document.body.style.overflow = null;
+    }
 }

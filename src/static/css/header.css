@@ -43,10 +43,6 @@ header.scrolled {
     align-items: center;
 }
 
-.main_nav_wrapper.scrolled {
-    color: black;
-}
-
 .main_tabs_wrapper {
     display: flex;
     margin-left: 90px;

@@ -69,10 +69,6 @@
     line-height: 20px;
     font-size: 16px;
     font-weight: 400;
-    transition: transform 0.15s;
-}
-
-.input_example.animation {
     transform: translateY(-8px) translateX(-6px) scale(0.75);
 }
 

@@ -14,8 +14,10 @@ export default class Component {
     render() {
         this.target.innerHTML = this.template();
         this.mounted();
+        this.setEventAlways();
     }
     setEvent() {}
+    setEventAlways() {}
     setState(newState) {
         this.state = {...this.state,
             ...newState
@@ -28,9 +30,15 @@ export default class Component {
     }
 
     addEvent(eventType, selector, callback) {
+        if (eventType === 'focus') {
+            console.log(eventType);
+            console.log(selector);
+            let children = this.target.querySelectorAll(selector);
+            console.log(children);
+        }
         const children = this.target.querySelectorAll(selector);
 
-        const isTarget = (target) => children.includes(target) ||
+        const isTarget = (target) => [...children].includes(target) ||
             target.closest(selector);
 
         this.target.addEventListener(eventType, event => {
