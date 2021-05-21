@@ -1,6 +1,3 @@
-import {
-    isJSDocThisTag
-} from "typescript";
 import Component from "../../core/Component";
 
 export default class LoginModal extends Component {
