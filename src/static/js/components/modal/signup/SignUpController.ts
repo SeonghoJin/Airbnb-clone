@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+const SERVER_PRE = "http://localhost:3000"
 
 
 export const vaildId = (id: string) => {
@@ -17,6 +17,14 @@ export const vaildSignUp = (id: string, password: string, repassword: string) =>
     return vaildId(id) && vaildPassword(password, repassword);
 }
 
-export const SingUpRequest = (id: string, password: string) => {
-
+export const requestSignUp = (id: string, password: string, repassword: string) => {
+    axios({
+        method: 'post',
+        url: SERVER_PRE + "/auth/sign-up",
+        data: {
+            id: id,
+            password: password,
+            repassword: repassword
+        }
+    })
 }

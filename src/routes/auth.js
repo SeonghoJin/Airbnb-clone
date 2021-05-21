@@ -24,4 +24,12 @@ export default (function (app) {
         })
             .send();
     });
+    router.post('/sign-up', function (req, res) {
+        var id = req.body.id;
+        var pw = req.body.pw;
+        req.session._id = id;
+        req.session.save();
+        res.cookie("sid", req.sessionID);
+        res.redirect("/");
+    });
 });

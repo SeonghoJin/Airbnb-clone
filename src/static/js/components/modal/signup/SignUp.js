@@ -1,6 +1,7 @@
 import Component from "../../../core/Component";
 import {
-    vaildSignUp
+    vaildSignUp,
+    requestSignUp
 } from "./SignUpController.js"
 import "../modal.css"
 export default class SignUp extends Component {
@@ -86,13 +87,13 @@ export default class SignUp extends Component {
                 errorflag: true
             })
         });
-        this.addEvent('keydown', '#id', (e) => {
+        this.addEvent('keyup', '#id', (e) => {
             this.state.id_value = e.target.value;
         })
-        this.addEvent('keydown', '#password', (e) => {
+        this.addEvent('keyup', '#password', (e) => {
             this.state.password_value = e.target.value;
         })
-        this.addEvent('keydown', '#repassword', (e) => {
+        this.addEvent('keyup', '#repassword', (e) => {
             this.state.repassword_value = e.target.value;
         })
 
@@ -109,7 +110,7 @@ export default class SignUp extends Component {
                 return;
             } else {
                 toggleEnableSignUpModal();
-                alert("로그인");
+                requestSignUp(id_value, password_value, repassword_value);
             }
         })
 
