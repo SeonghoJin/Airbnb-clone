@@ -1,4 +1,4 @@
-.login_modal {
+.modal {
     position: fixed;
     z-index: 2000;
     width: 100vw;
@@ -69,7 +69,8 @@
     line-height: 20px;
     font-size: 16px;
     font-weight: 400;
-    transform: translateY(-8px) translateX(-6px) scale(0.75);
+    transform-origin: 0%;
+    transform: translateY(-8px) scale(0.75);
 }
 
 .input_email {
@@ -80,7 +81,7 @@
     margin: 26px 12px 10px;
 }
 
-.signup_and_login {
+.modal_content_template button {
     cursor: pointer;
     display: inline-block;
     margin: 0px;
@@ -99,7 +100,7 @@
     transition: transform 0.3s;
 }
 
-.signup_and_login:hover {
+.modal_content_template button:hover {
     transform: scale(0.95);
 }
 

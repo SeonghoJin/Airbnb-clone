@@ -8,24 +8,28 @@ import Experience from "./components/experience/Experience"
 import ContentThree from "./components/contentThree/ContentThree"
 import Footer from "./components/footer/Footer"
 import LoginModal from "./components/login-modal/LoginModal"
+import signUp from "./components/modal/signup/SignUp";
 
 export default class App extends Component {
 
     setup() {
         this.state = {
             scrolled: false,
-            enableLoginModal: false
+            enableLoginModal: false,
+            enableSignUpModal: false,
         }
 
     }
 
     template() {
         const {
-            enableLoginModal
+            enableLoginModal,
+            enableSignUpModal
         } = this.state;
         return `
-    <LoginModal class="login_modal ${enableLoginModal ? "flex" : "hidden"}">
+    <LoginModal class="modal ${enableLoginModal ? "flex" : "hidden"}">
     </LoginModal>
+    <SignUp class="modal ${enableSignUpModal ? "flex" : "hidden"}"></SignUp>
     <header class="${this.state.scrolled ? "scrolled" : ""}">
     </header>
     <search class="search_wrapper">
@@ -51,7 +55,8 @@ export default class App extends Component {
         } = this.state;
         this.attach('header', Header, {
             scrolled: scrolled,
-            toggleEnableLoginModal: this.toggleEnableLoginModal.bind(this)
+            toggleEnableLoginModal: this.toggleEnableLoginModal.bind(this),
+            toggleEnableSignUpModal: this.toggleEnableSignUpModal.bind(this)
         });
         this.attach('city', City);
         this.attach('search', Search);
@@ -62,6 +67,9 @@ export default class App extends Component {
         this.attach('footer', Footer);
         this.attach('LoginModal', LoginModal, {
             toggleEnableLoginModal: this.toggleEnableLoginModal.bind(this)
+        });
+        this.attach('SignUp', signUp, {
+            toggleEnableSignUpModal: this.toggleEnableSignUpModal.bind(this)
         });
     }
 
@@ -81,6 +89,17 @@ export default class App extends Component {
         })
 
         if (this.state.enableLoginModal) {
+            this.disableScroll();
+        } else {
+            this.enableScroll();
+        }
+    }
+
+    toggleEnableSignUpModal() {
+        this.setState({
+            enableSignUpModal: !this.state.enableSignUpModal
+        });
+        if (this.state.enableSignUpModal) {
             this.disableScroll();
         } else {
             this.enableScroll();

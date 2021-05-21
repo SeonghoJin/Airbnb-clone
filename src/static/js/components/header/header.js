@@ -17,11 +17,13 @@ export default class Header extends Component {
     mounted() {
         const {
             scrolled,
-            toggleEnableLoginModal
+            toggleEnableLoginModal,
+            toggleEnableSignUpModal
         } = this.props;
         this.attach('MainWrapper', MainWrapper, {
             scrolled: scrolled,
-            toggleEnableLoginModal: toggleEnableLoginModal
+            toggleEnableLoginModal: toggleEnableLoginModal,
+            toggleEnableSignUpModal: toggleEnableSignUpModal
         });
     }
 
@@ -49,12 +51,14 @@ class MainWrapper extends Component {
     mounted() {
         const {
             scrolled,
-            toggleEnableLoginModal
+            toggleEnableLoginModal,
+            toggleEnableSignUpModal
         } = this.props;
 
         this.attach("SubTabThird", SubTabThird, {
             scrolled: scrolled,
-            toggleEnableLoginModal: toggleEnableLoginModal
+            toggleEnableLoginModal: toggleEnableLoginModal,
+            toggleEnableSignUpModal: toggleEnableSignUpModal
         })
 
     }
@@ -103,9 +107,22 @@ class SubTabThird extends Component {
         toggleEnableLoginModal();
     }
 
+    toggleThirdTabClick() {
+        this.setState({
+            third_tab_click: !this.state.third_tab_click
+        })
+    }
+
     mounted() {
+
+        const {
+            toggleEnableSignUpModal
+        } = this.props;
+
         this.attach("Options", Options, {
-            onLogin: this.onLogin.bind(this)
+            onLogin: this.onLogin.bind(this),
+            toggleThirdTabClick: this.toggleThirdTabClick.bind(this),
+            toggleEnableSignUpModal: toggleEnableSignUpModal
         });
     }
 

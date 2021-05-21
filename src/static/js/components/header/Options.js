@@ -1,14 +1,26 @@
 import Component from "../../core/Component";
+import SignUp from "../modal/signup/SignUp";
 
 export default class Options extends Component {
 
+    setup() {
+        this.state = {
+            clickSingUp: false
+        }
+    }
+
     template() {
+
+        const {
+            clickSingUp
+        } = this.state;
+
         return `
                     <ul>
                         <li class="login">
                             로그인
                         </li>
-                        <li>
+                        <li class="signup">
                             회원 가입
                         </li>
                     </ul>
@@ -23,15 +35,21 @@ export default class Options extends Component {
                             도움말
                         </li>
                     </ul>        
-        
         `
     }
 
     setEvent() {
         const {
             onLogin,
+            toggleThirdTabClick,
+            toggleEnableSignUpModal
         } = this.props;
         this.addEvent('click', '.login', onLogin);
+        this.addEvent('click', '.signup', () => {
+            toggleThirdTabClick();
+            toggleEnableSignUpModal();
+        })
     }
+
 
 }
