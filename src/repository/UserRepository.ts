@@ -1,13 +1,7 @@
-import { IDatabase } from "../database/IDataBase.js";
 import { User } from "../domain/User.js";
+import { Repository } from "./Repository.js";
 
-class UserRepository {
-
-    private database: IDatabase<User>;
-
-    constructor(database: IDatabase<User>) {
-        this.database = database;
-    }
+class UserRepository extends Repository<User>{
 
     async getUserById(id: string): Promise<User[]> {
         return this.database.find({ id: id });
