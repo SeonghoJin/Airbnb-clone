@@ -1,7 +1,6 @@
-import { request, Request, Response, Router } from 'express';
+import { Request, Response, Router } from 'express';
 import AuthService from '../service/AuthService.js';
 import { v4 } from 'uuid'
-import { requestSignUp } from '../static/js/components/modal/signup/SignUpController.js';
 const router = Router();
 
 declare module 'express-session' {
