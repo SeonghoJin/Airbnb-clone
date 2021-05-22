@@ -29,6 +29,7 @@ export default (function (app) {
         var pw = req.body.pw;
         req.session._id = id;
         req.session.save();
+        console.log();
         res.cookie("sid", req.sessionID);
         res.redirect("/");
     });

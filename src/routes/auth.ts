@@ -46,7 +46,7 @@ export default (app: Router) => {
 
         req.session._id = id;
         req.session.save();
-
+        console.log()
         res.cookie("sid", req.sessionID);
         res.redirect("/");
     })
