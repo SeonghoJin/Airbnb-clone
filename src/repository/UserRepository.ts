@@ -1,10 +1,26 @@
+import { IDatabase } from "../core/database/IDataBase.js";
+import { NeDB } from "../core/database/NeDB.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
-import { NeDBRepository } from "../core/repository/NeDBRepository.js";
+import { Connect } from "../core/Ioc/decorator/Connect.js";
+import { Repository } from "../core/repository/Repository.js";
 import { User } from "../domain/User.js";
 
-@Bean()
-export class UserRepository extends NeDBRepository<User>{
+export interface UserRepository extends Repository<User> {
 
+    getUserById(id: string): Promise<User[]>;
+    exist(id: string): Promise<boolean>;
+    insert(user: User): Promise<void>;
+
+}
+
+@Bean()
+export class ConcreteUserRepository implements UserRepository {
+
+    @Connect(NeDB, User)
+    database: IDatabase<User>;
+
+    constructor() {
+    }
     async getUserById(id: string): Promise<User[]> {
         return this.database.find({ id: id });
     }

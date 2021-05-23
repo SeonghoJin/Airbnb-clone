@@ -45,15 +45,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 import { AutoWired } from '../core/Ioc/decorator/Autowired.js';
 import { Bean } from '../core/Ioc/decorator/Bean.js';
-import { User } from '../domain/User.js';
-import { UserRepository } from '../repository/UserRepository.js';
+import { ConcreteUserRepository } from '../repository/UserRepository.js';
 var AuthService = /** @class */ (function () {
     function AuthService() {
     }
     AuthService.prototype.Login = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.userRepository.insert(new User(req.body.id, req.body.password));
                 return [2 /*return*/];
             });
         });
@@ -61,10 +59,7 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.isUser = function (id) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.userRepository.exist(id)];
-                    case 1: return [2 /*return*/, (_a.sent())];
-                }
+                return [2 /*return*/];
             });
         });
     };
@@ -73,8 +68,8 @@ var AuthService = /** @class */ (function () {
         return spEmail.length == 2 && spEmail[1] != '';
     };
     __decorate([
-        AutoWired(),
-        __metadata("design:type", UserRepository)
+        AutoWired(ConcreteUserRepository),
+        __metadata("design:type", Object)
     ], AuthService.prototype, "userRepository", void 0);
     AuthService = __decorate([
         Bean()
