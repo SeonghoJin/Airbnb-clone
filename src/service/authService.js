@@ -43,8 +43,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+import Container from '../core/Ioc/Container.js';
 import { AutoWired } from '../core/Ioc/decorator/Autowired.js';
 import { Bean } from '../core/Ioc/decorator/Bean.js';
+import { ConcreteTestRepository } from '../repository/TestRepository.js';
 import { ConcreteUserRepository } from '../repository/UserRepository.js';
 var AuthService = /** @class */ (function () {
     function AuthService() {
@@ -52,6 +54,9 @@ var AuthService = /** @class */ (function () {
     AuthService.prototype.Login = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                console.log(Container);
+                console.log(this.userRepository.database);
+                console.log(this.testRepository.database);
                 return [2 /*return*/];
             });
         });
@@ -71,6 +76,10 @@ var AuthService = /** @class */ (function () {
         AutoWired(ConcreteUserRepository),
         __metadata("design:type", Object)
     ], AuthService.prototype, "userRepository", void 0);
+    __decorate([
+        AutoWired(ConcreteTestRepository),
+        __metadata("design:type", Object)
+    ], AuthService.prototype, "testRepository", void 0);
     AuthService = __decorate([
         Bean()
     ], AuthService);

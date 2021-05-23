@@ -43,7 +43,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { NeDB } from "../core/database/NeDB.js";
+import { MySQL } from "../core/database/MySQL.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
 import { Connect } from "../core/Ioc/decorator/Connect.js";
 import { User } from "../domain/User.js";
@@ -78,7 +78,7 @@ var ConcreteUserRepository = /** @class */ (function () {
         });
     };
     __decorate([
-        Connect(NeDB, User),
+        Connect(MySQL, User),
         __metadata("design:type", Object)
     ], ConcreteUserRepository.prototype, "database", void 0);
     ConcreteUserRepository = __decorate([

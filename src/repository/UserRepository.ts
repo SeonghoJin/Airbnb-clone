@@ -1,4 +1,5 @@
 import { IDatabase } from "../core/database/IDataBase.js";
+import { MySQL } from "../core/database/MySQL.js";
 import { NeDB } from "../core/database/NeDB.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
 import { Connect } from "../core/Ioc/decorator/Connect.js";
@@ -16,7 +17,7 @@ export interface UserRepository extends Repository<User> {
 @Bean()
 export class ConcreteUserRepository implements UserRepository {
 
-    @Connect(NeDB, User)
+    @Connect(MySQL, User)
     database: IDatabase<User>;
 
     constructor() {

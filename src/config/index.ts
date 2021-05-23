@@ -1,10 +1,14 @@
 import dotenv from 'dotenv';
-var envs = dotenv.config();
+
+const envs = dotenv.config();
+
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 if (envs.error) {
     throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
-var config = {
+
+const config = {
     port: process.env.PORT,
     session_secret: process.env.SESSION_SECRET,
     MAIN_URI: (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''),
@@ -13,5 +17,6 @@ var config = {
     DB_USER: process.env.DB_USER,
     DB_PASSWORD: process.env.DB_PASSWORD,
     DB_NAME: process.env.DB_NAME
-};
-export default config;
+}
+
+export default config

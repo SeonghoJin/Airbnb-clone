@@ -3,9 +3,9 @@ import { IDatabase } from './IDataBase'
 
 export class NeDB<T> implements IDatabase<T>{
     private db: nedb<T>
-    constructor() {
+    constructor(databaseName: string) {
         this.db = new nedb<T>({
-            filename: 'nedb/' + new Date().getTime().toString(),
+            filename: 'nedb/' + databaseName,
             autoload: true
         })
     }
