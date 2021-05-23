@@ -1,9 +1,9 @@
 import nedb from 'nedb';
+import 'reflect-metadata';
 var NeDB = /** @class */ (function () {
-    function NeDB(_a) {
-        var databaseName = _a.databaseName;
+    function NeDB() {
         this.db = new nedb({
-            filename: "./nedbstore/" + databaseName,
+            filename: "123",
             autoload: true
         });
     }

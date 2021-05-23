@@ -1,11 +1,12 @@
 import nedb from 'nedb'
 import { IDatabase } from './IDataBase'
+import 'reflect-metadata'
 
 export class NeDB<T> implements IDatabase<T>{
     private db: nedb<T>
     constructor() {
         this.db = new nedb<T>({
-            filename: Date.now().toString(),
+            filename: "123",
             autoload: true
         })
     }

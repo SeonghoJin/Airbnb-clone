@@ -1,4 +1,4 @@
-import { IDatabase } from "../database/IDataBase";
+import { IDatabase } from "../core/database/IDataBase";
 
 export class Repository<T>{
     protected database: IDatabase<T>
