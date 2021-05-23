@@ -18,6 +18,7 @@ export default new /** @class */ (function () {
         }
         item = new (clazz.bind.apply(clazz, __spreadArray([void 0], args)))();
         this.container.set(clazz, item);
+        console.log(item);
         return item;
     };
     class_1.prototype.get = function (clazz) {
@@ -26,9 +27,11 @@ export default new /** @class */ (function () {
             args[_i - 1] = arguments[_i];
         }
         var item = this.container.get(clazz);
-        if (item === undefined)
-            return null;
-        return item;
+        if (item === undefined) {
+            item = new (clazz.bind.apply(clazz, __spreadArray([void 0], args)))();
+            this.container.set(clazz, item);
+        }
+        return this.container.get(clazz);
     };
     return class_1;
 }());

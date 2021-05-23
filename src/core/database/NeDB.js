@@ -1,9 +1,8 @@
 import nedb from 'nedb';
-import 'reflect-metadata';
 var NeDB = /** @class */ (function () {
     function NeDB() {
         this.db = new nedb({
-            filename: "123",
+            filename: 'nedb/' + new Date().getTime().toString(),
             autoload: true
         });
     }

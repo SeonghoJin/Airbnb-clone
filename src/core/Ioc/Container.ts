@@ -1,7 +1,5 @@
+import { Clazz } from "../interface/Clazz";
 
-interface Clazz {
-    new(...args: any[]): any
-}
 
 export default new class {
     private container: Map<Clazz, any>;
@@ -17,13 +15,17 @@ export default new class {
         }
         item = new clazz(...args);
         this.container.set(clazz, item);
+        console.log(item);
         return item;
     }
 
     get<T extends Clazz>(clazz: T, ...args: any[]): T | null {
-        const item = this.container.get(clazz);
-        if (item === undefined) return null;
-        return item;
+        let item = this.container.get(clazz);
+        if (item === undefined) {
+            item = new clazz(...args);
+            this.container.set(clazz, item);
+        }
+        return this.container.get(clazz);
     }
 
 }
