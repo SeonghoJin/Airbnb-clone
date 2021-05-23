@@ -17,7 +17,7 @@ export interface UserRepository extends Repository<User> {
 @Bean()
 export class ConcreteUserRepository implements UserRepository {
 
-    @Connect(MySQL, User)
+    @Connect(NeDB, User)
     database: IDatabase<User>;
 
     constructor() {

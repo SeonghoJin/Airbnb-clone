@@ -15,7 +15,7 @@ export interface TestRepository extends Repository<Test> {
 
 @Bean()
 export class ConcreteTestRepository implements TestRepository {
-    @Connect(MySQL, Test)
+    @Connect(NeDB, Test)
     database: IDatabase<Test>;
 
 }
