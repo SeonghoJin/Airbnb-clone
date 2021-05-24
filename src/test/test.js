@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { MySQL } from "../core/database/MySQL.js";
 import { NeDB } from "../core/database/NeDB.js";
 import Container from "../core/Ioc/Container.js";
 import { AutoWired } from "../core/Ioc/decorator/Autowired.js";
@@ -29,7 +30,11 @@ var Test = /** @class */ (function () {
     __decorate([
         Connect(NeDB, User),
         __metadata("design:type", Object)
-    ], Test.prototype, "database", void 0);
+    ], Test.prototype, "NeDBdatabase", void 0);
+    __decorate([
+        Connect(MySQL, User),
+        __metadata("design:type", Object)
+    ], Test.prototype, "MySQLdatabase", void 0);
     __decorate([
         AutoWired(),
         __metadata("design:type", Object)

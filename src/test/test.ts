@@ -1,4 +1,5 @@
 import { IDatabase } from "../core/database/IDataBase.js";
+import { MySQL } from "../core/database/MySQL.js";
 import { NeDB } from "../core/database/NeDB.js";
 import Container from "../core/Ioc/Container.js";
 import { AutoWired } from "../core/Ioc/decorator/Autowired.js";
@@ -18,7 +19,10 @@ export class Test {
     userRepository: UserRepository
 
     @Connect(NeDB, User)
-    database: IDatabase<User>
+    NeDBdatabase: IDatabase<User>
+
+    @Connect(MySQL, User)
+    MySQLdatabase: IDatabase<User>
 
     @AutoWired()
     userRepositoryNoAutoWired: UserRepository
