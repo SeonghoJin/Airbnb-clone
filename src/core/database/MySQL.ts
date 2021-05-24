@@ -1,6 +1,6 @@
-import { IDatabase } from "./IDataBase";
+import { IDatabase } from "./interface/IDataBase";
 import mysql from 'mysql2';
-import { IDBconfig } from "../interface/DBconfig";
+import { IDBconfig } from "./interface/DBconfig";
 import { Bean } from "../Ioc/decorator/Bean.js";
 
 export class MySQL implements IDatabase {

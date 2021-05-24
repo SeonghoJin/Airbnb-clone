@@ -1,4 +1,4 @@
-import { TypeGuard } from "../interface/TypeGuard"
+import { TypeGuard } from "../../interface/TypeGuard"
 
 export interface IDatabase {
     find(query: any): Promise<any>

@@ -1,10 +1,10 @@
 import { DBconfig } from "../config/index.js";
-import { IDatabase } from "../core/database/IDataBase.js";
-import { NeDB } from "../core/database/NeDB.js";
+import { Connect } from "../core/database/decorator/Connect.js";
+import { IDatabase } from "../core/database/interface/IDataBase.js";
+import { Repository } from "../core/database/repository/Repository.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
-import { Connect } from "../core/Ioc/decorator/Connect.js";
-import { Repository } from "../core/repository/Repository.js";
 import { User } from "../domain/User.js";
+
 
 export interface UserRepository extends Repository<User> {
 

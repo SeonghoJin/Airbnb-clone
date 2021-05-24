@@ -7,9 +7,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { DBconfig } from "../config/index.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
-import { Connect } from "../core/Ioc/decorator/Connect.js";
+import { Connect } from "../core/database/decorator/Connect.js";
+import { DBconfig } from "../config/index.js";
 var Test = /** @class */ (function () {
     function Test() {
     }

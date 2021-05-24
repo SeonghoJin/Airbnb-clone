@@ -1,6 +1,6 @@
-import { isIDatabase } from "../../database/IDataBase.js";
-import { NeDB } from "../../database/NeDB.js";
-import Container from "../Container.js";
+import Container from "../../Ioc/Container.js";
+import { isIDatabase } from "../interface/IDataBase.js";
+import { NeDB } from "../NeDB.js";
 export var Connect = function (config, database) {
     return function (target, propertyKey) {
         if (database === undefined) {

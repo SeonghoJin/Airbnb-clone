@@ -44,8 +44,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 import { DBconfig } from "../config/index.js";
+import { Connect } from "../core/database/decorator/Connect.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
-import { Connect } from "../core/Ioc/decorator/Connect.js";
 var ConcreteUserRepository = /** @class */ (function () {
     function ConcreteUserRepository() {
     }

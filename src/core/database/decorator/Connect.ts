@@ -1,8 +1,8 @@
-import { IDatabase, isIDatabase } from "../../database/IDataBase.js";
-import { NeDB } from "../../database/NeDB.js";
-import { Clazz, } from "../../interface/Clazz.js"
-import { IDBconfig } from "../../interface/DBconfig.js";
-import Container from "../Container.js";
+import { Clazz } from "../../interface/Clazz.js";
+import Container from "../../Ioc/Container.js";
+import { IDBconfig } from "../interface/DBconfig.js";
+import { isIDatabase } from "../interface/IDataBase.js";
+import { NeDB } from "../NeDB.js";
 
 export const Connect = (config: IDBconfig, database?: Clazz) => {
     return (target: any, propertyKey: any) => {

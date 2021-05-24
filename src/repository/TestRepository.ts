@@ -1,10 +1,8 @@
-import { DBconfig } from "../config/index.js";
-import { IDatabase } from "../core/database/IDataBase.js";
-import { MySQL } from "../core/database/MySQL.js";
-import { NeDB } from "../core/database/NeDB.js";
+import { IDatabase } from "../core/database/interface/IDataBase.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
-import { Connect } from "../core/Ioc/decorator/Connect.js";
-import { Repository } from "../core/repository/Repository.js";
+import { Repository } from "../core/database/repository/Repository.js";
+import { Connect } from "../core/database/decorator/Connect.js";
+import { DBconfig } from "../config/index.js";
 
 class Test {
 

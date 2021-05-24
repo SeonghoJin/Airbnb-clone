@@ -1,6 +1,6 @@
 import nedb from 'nedb'
-import { IDBconfig } from '../interface/DBconfig'
-import { IDatabase } from './IDataBase'
+import { IDBconfig } from './interface/DBconfig'
+import { IDatabase } from './interface/IDataBase'
 
 export class NeDB implements IDatabase {
     private db: nedb

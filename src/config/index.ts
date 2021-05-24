@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { IDBconfig } from '../core/interface/DBconfig';
+import { IDBconfig } from '../core/database/interface/DBconfig';
 
 const envs = dotenv.config();
 
