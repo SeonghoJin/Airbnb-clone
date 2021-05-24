@@ -1,10 +1,39 @@
 import assert from 'assert'
+import { DBconfig } from '../../../config/index.js'
+import { IDatabase, isIDatabase } from '../../../core/database/IDataBase.js'
 import { MySQL } from '../../../core/database/MySQL.js'
 import { NeDB } from '../../../core/database/NeDB.js'
 import Container from '../../../core/Ioc/Container.js'
-import { ConcreteUserRepository } from '../../../repository/UserRepository.js'
+import { AutoWired } from '../../../core/Ioc/decorator/Autowired.js'
+import { Connect } from '../../../core/Ioc/decorator/Connect.js'
+import { ConcreteUserRepository, UserRepository } from '../../../repository/UserRepository.js'
 import { AuthService } from '../../../service/AuthService.js'
-import Test from '../../test.js'
+
+
+export class test {
+
+    @AutoWired()
+    authService: AuthService
+
+    @AutoWired(ConcreteUserRepository)
+    userRepository: UserRepository
+
+    @Connect(DBconfig, NeDB)
+    NeDBdatabase: IDatabase
+
+    @Connect(DBconfig, MySQL)
+    MySQLdatabase: IDatabase
+
+    @AutoWired()
+    userRepositoryNoAutoWired: UserRepository
+
+    @Connect(DBconfig)
+    TestDatabase: IDatabase
+
+}
+
+const Test = new test();
+
 
 describe('Ioc 테스트', () => {
 
@@ -30,6 +59,10 @@ describe('Ioc 테스트', () => {
 
     it('MySQL database 테스트', () => {
         assert.ok(Test.MySQLdatabase instanceof MySQL);
+    })
+
+    it('IDatabase 주입 테스트', () => {
+        assert.ok(isIDatabase(Test.TestDatabase))
     })
 
 })

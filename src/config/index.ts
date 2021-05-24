@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import { IDBconfig } from '../core/interface/DBconfig';
 
 const envs = dotenv.config();
 
@@ -8,7 +9,8 @@ if (envs.error) {
     throw new Error("⚠️  Couldn't find .env file  ⚠️");
 }
 
-const config = {
+
+export const config = {
     port: process.env.PORT,
     session_secret: process.env.SESSION_SECRET,
     MAIN_URI: (process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''),
@@ -19,4 +21,11 @@ const config = {
     DB_NAME: process.env.DB_NAME
 }
 
-export default config
+export const DBconfig: IDBconfig = {
+    DB_PORT: "3306",
+    DB_HOST: process.env.DB_HOST,
+    DB_PROT: process.env.DB_PORT,
+    DB_USER: process.env.DB_USER,
+    DB_PASSWORD: process.env.DB_PASSWORD,
+    DB_NAME: process.env.DB_NAME
+}

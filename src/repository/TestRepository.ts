@@ -1,3 +1,4 @@
+import { DBconfig } from "../config/index.js";
 import { IDatabase } from "../core/database/IDataBase.js";
 import { MySQL } from "../core/database/MySQL.js";
 import { NeDB } from "../core/database/NeDB.js";
@@ -15,7 +16,7 @@ export interface TestRepository extends Repository<Test> {
 
 @Bean()
 export class ConcreteTestRepository implements TestRepository {
-    @Connect(NeDB, Test)
-    database: IDatabase<Test>;
+    @Connect(DBconfig)
+    database: IDatabase;
 
 }

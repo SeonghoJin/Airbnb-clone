@@ -7,13 +7,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+import { DBconfig } from "../config/index.js";
 import { MySQL } from "../core/database/MySQL.js";
 import { NeDB } from "../core/database/NeDB.js";
 import Container from "../core/Ioc/Container.js";
 import { AutoWired } from "../core/Ioc/decorator/Autowired.js";
-import { Bean } from "../core/Ioc/decorator/Bean.js";
 import { Connect } from "../core/Ioc/decorator/Connect.js";
-import { User } from "../domain/User.js";
 import { ConcreteUserRepository } from "../repository/UserRepository.js";
 import { AuthService } from "../service/AuthService.js";
 var Test = /** @class */ (function () {
@@ -28,20 +27,17 @@ var Test = /** @class */ (function () {
         __metadata("design:type", Object)
     ], Test.prototype, "userRepository", void 0);
     __decorate([
-        Connect(NeDB, User),
+        Connect(DBconfig, NeDB),
         __metadata("design:type", Object)
     ], Test.prototype, "NeDBdatabase", void 0);
     __decorate([
-        Connect(MySQL, User),
+        Connect(DBconfig, MySQL),
         __metadata("design:type", Object)
     ], Test.prototype, "MySQLdatabase", void 0);
     __decorate([
         AutoWired(),
         __metadata("design:type", Object)
     ], Test.prototype, "userRepositoryNoAutoWired", void 0);
-    Test = __decorate([
-        Bean()
-    ], Test);
     return Test;
 }());
 export { Test };

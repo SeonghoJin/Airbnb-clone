@@ -12,13 +12,12 @@ export default new /** @class */ (function () {
         for (var _i = 1; _i < arguments.length; _i++) {
             args[_i - 1] = arguments[_i];
         }
-        var item = this.get(clazz);
-        if (item !== null) {
+        var item = this.container.get(clazz);
+        if (item !== undefined) {
             return item;
         }
         item = new (clazz.bind.apply(clazz, __spreadArray([void 0], args)))();
         this.container.set(clazz, item);
-        console.log(item);
         return item;
     };
     class_1.prototype.get = function (clazz) {
@@ -31,7 +30,17 @@ export default new /** @class */ (function () {
             item = new (clazz.bind.apply(clazz, __spreadArray([void 0], args)))();
             this.container.set(clazz, item);
         }
-        return this.container.get(clazz);
+        return item;
+    };
+    class_1.prototype.getBeanOfInterface = function (typeGuard) {
+        var item = null;
+        this.container.forEach(function (value, key) {
+            if (typeGuard(value)) {
+                item = value;
+                return;
+            }
+        });
+        return item;
     };
     return class_1;
 }());

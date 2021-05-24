@@ -1,8 +1,8 @@
 import nedb from 'nedb';
 var NeDB = /** @class */ (function () {
-    function NeDB(databaseName) {
+    function NeDB(config) {
         this.db = new nedb({
-            filename: 'nedb/' + databaseName,
+            filename: 'nedb/' + config.DB_NAME,
             autoload: true
         });
     }

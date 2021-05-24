@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { NeDB } from "../core/database/NeDB.js";
+import { DBconfig } from "../config/index.js";
 import { Bean } from "../core/Ioc/decorator/Bean.js";
 import { Connect } from "../core/Ioc/decorator/Connect.js";
 var Test = /** @class */ (function () {
@@ -19,7 +19,7 @@ var ConcreteTestRepository = /** @class */ (function () {
     function ConcreteTestRepository() {
     }
     __decorate([
-        Connect(NeDB, Test),
+        Connect(DBconfig),
         __metadata("design:type", Object)
     ], ConcreteTestRepository.prototype, "database", void 0);
     ConcreteTestRepository = __decorate([

@@ -1,12 +1,11 @@
 import mysql from 'mysql2';
-import config from "../../config/index.js";
 var MySQL = /** @class */ (function () {
-    function MySQL(databaseName) {
+    function MySQL(config) {
         this.connection = mysql.createConnection({
             host: config.DB_HOST,
             user: config.DB_USER,
             password: config.DB_PASSWORD,
-            database: databaseName
+            database: config.DB_NAME
         });
     }
     MySQL.prototype.find = function (query) {

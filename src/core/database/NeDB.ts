@@ -1,26 +1,27 @@
 import nedb from 'nedb'
+import { IDBconfig } from '../interface/DBconfig'
 import { IDatabase } from './IDataBase'
 
-export class NeDB<T> implements IDatabase<T>{
-    private db: nedb<T>
-    constructor(databaseName: string) {
-        this.db = new nedb<T>({
-            filename: 'nedb/' + databaseName,
+export class NeDB implements IDatabase {
+    private db: nedb
+    constructor(config: IDBconfig) {
+        this.db = new nedb({
+            filename: 'nedb/' + config.DB_NAME,
             autoload: true
         })
     }
 
-    insert(data: T): Promise<void> {
+    insert(data: any): Promise<void> {
         return new Promise<void>((res, rej) => {
-            this.db.insert(data, (err, doc: T) => {
+            this.db.insert(data, (err, doc: any) => {
                 res();
             })
         })
     }
 
-    find(query: any): Promise<T[]> {
-        return new Promise<T[]>((res, rej) => {
-            this.db.find(query, (err: Error, doc: T[]) => {
+    find(query: any): Promise<any[]> {
+        return new Promise<any[]>((res, rej) => {
+            this.db.find(query, (err: Error, doc: any[]) => {
                 res(doc);
             })
         })
