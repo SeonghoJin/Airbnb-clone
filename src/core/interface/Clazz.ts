@@ -1,3 +1,4 @@
+import { TypeGuard } from "./TypeGuard";
 
 export interface Clazz {
     new(...args: any[]): any

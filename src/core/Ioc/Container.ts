@@ -8,7 +8,7 @@ export default new class {
         this.container = new Map<Clazz, any>();
     }
 
-    set<T extends Clazz>(clazz: T, ...args: any[]) {
+    set(clazz: Clazz, ...args: any[]) {
         let item = this.container.get(clazz);
         if (item !== undefined) {
             return item;
@@ -18,7 +18,7 @@ export default new class {
         return item;
     }
 
-    get<T extends Clazz>(clazz: T, ...args: any[]): T | null {
+    get(clazz: Clazz, ...args: any[]): Clazz | null {
         let item = this.container.get(clazz);
         if (item === undefined) {
             item = new clazz(...args);
