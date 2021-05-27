@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { IDBconfig } from '../core/database/interface/DBconfig';
+import { IDBconfig } from 'typejnu';
 
 const envs = dotenv.config();
 
