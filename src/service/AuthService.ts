@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
-import { AutoWired } from '../core/Ioc/decorator/Autowired.js';
-import { Bean } from '../core/Ioc/decorator/Bean.js';
+import { Bean, AutoWired } from 'typejnu';
 import { ConcreteUserRepository, UserRepository } from '../repository/UserRepository.js';
 
 @Bean()

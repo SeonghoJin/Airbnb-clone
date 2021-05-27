@@ -4,7 +4,6 @@ import {
 } from './src/config/index.js';
 import route from './src/routes/index.js';
 import middlewears from './src/middlewears/index.js';
-import Container from './src/core/Ioc/Container.js';
 
 const app = express();
 

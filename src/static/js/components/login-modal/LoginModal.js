@@ -5,7 +5,7 @@ export default class LoginModal extends Component {
     setup() {
         this.state = {
             onFocusEmail: false,
-            errorflag: false
+            errorflag: true
         }
     }
 

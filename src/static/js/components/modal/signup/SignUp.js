@@ -11,7 +11,7 @@ export default class SignUp extends Component {
             id_value: "",
             password_value: "",
             repassword_value: "",
-            errorflag: "true"
+            errorflag: true
         }
     }
 
